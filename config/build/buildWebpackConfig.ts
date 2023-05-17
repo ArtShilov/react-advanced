@@ -24,8 +24,5 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
     resolve: buildResolvers(),
     devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
-    optimization: {
-      runtimeChunk: 'single',
-    },
   }
 }
