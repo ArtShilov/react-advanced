@@ -1,13 +1,14 @@
 import { BuildOptions } from './types/config';
 
-import {Configuration as DevServerConfiguration  } from "webpack-dev-server"
+import { Configuration as DevServerConfiguration } from "webpack-dev-server"
 
 export const buildDevServer = (options: BuildOptions): DevServerConfiguration => {
-    const {port} = options
+    const { port } = options
 
     return {
-    port,
-    open: true,
-    static: './dist',
+        port,
+        open: true,
+        static: './dist',
+        historyApiFallback: true,
     }
 }
