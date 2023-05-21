@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import classNames from "shared/lib/classNames/classNames";
 import styles from "./Sidebar.module.scss";
-import ThemeSwitcher from "shared/ui/ThemeSwitcher/ThemeSwitcher";
+import ThemeSwitcher from "widgets/ThemeSwitcher/ThemeSwitcher";
 
 interface SidebarProps {
   className?: string;
@@ -11,7 +11,6 @@ const Sidebar: FC<SidebarProps> = (props) => {
   const { className } = props;
 
   const [isCollapsed, setIsCollapsed] = useState(false);
-  console.log("🚀 ~ file: Sidebar.tsx:13 ~ isCollapsed:", isCollapsed);
 
   const handleToggle = () => setIsCollapsed((prev) => !prev);
 
