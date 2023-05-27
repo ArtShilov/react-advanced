@@ -1,10 +1,12 @@
 import { BuildOptions } from './types/config';
 import HtmlWebpackPlugin from "html-webpack-plugin"
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { WebpackPluginInstance, ProgressPlugin, DefinePlugin } from "webpack"
+import { WebpackPluginInstance, ProgressPlugin, DefinePlugin, HotModuleReplacementPlugin } from "webpack"
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 export const buildPlugin = ({ paths, isDev }: BuildOptions): WebpackPluginInstance[] => {
-    return [
+
+    const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html
         }),
@@ -15,6 +17,16 @@ export const buildPlugin = ({ paths, isDev }: BuildOptions): WebpackPluginInstan
         }),
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev)
-        })
+        }),
+
     ]
+
+    if (isDev) {
+        plugins.push(
+            new ReactRefreshWebpackPlugin(),
+            new HotModuleReplacementPlugin()
+        )
+    }
+
+    return plugins
 }
