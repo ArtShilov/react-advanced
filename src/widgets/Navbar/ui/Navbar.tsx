@@ -12,7 +12,6 @@ const Navbar: FC<NavbarProps> = (props) => {
   const { className } = props;
   const { t } = useTranslation("");
 
-
   return (
     <div className={classNames(styles.Navbar, {}, [classNames(className)])}>
       <nav className={classNames(styles.links)}>
@@ -21,11 +20,11 @@ const Navbar: FC<NavbarProps> = (props) => {
           to="/"
           className={classNames(styles.mainLink)}
         >
-          {t('навигация.Главная')}
+          {t("навигация.Главная")}
         </AppLink>
 
         <AppLink theme={AppLinkTheme.INVERTED} to="/about">
-        {t('навигация.О сайте')}
+          {t("навигация.О сайте")}
         </AppLink>
       </nav>
     </div>
