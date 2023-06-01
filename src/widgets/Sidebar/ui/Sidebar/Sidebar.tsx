@@ -22,8 +22,9 @@ const Sidebar: FC<SidebarProps> = (props) => {
                 { [styles.collapsed]: isCollapsed },
                 [className],
             )}
+            data-testid="sidebar"
         >
-            <button type="button" onClick={handleToggle}>
+            <button data-testid="sidebar-toggle" type="button" onClick={handleToggle}>
                 toggle
             </button>
 
