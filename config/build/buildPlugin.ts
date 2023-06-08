@@ -20,15 +20,16 @@ export const buildPlugin = ({ paths, isDev }: BuildOptions): WebpackPluginInstan
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
+
     ];
 
     if (isDev) {
         plugins.push(
             new ReactRefreshWebpackPlugin(),
             new HotModuleReplacementPlugin(),
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false,
+            }),
         );
     }
 
