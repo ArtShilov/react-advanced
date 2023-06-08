@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import AppLink, { AppLinkTheme } from './AppLink';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import AppLink, { AppLinkTheme } from './AppLink';
 
 export default {
     title: 'shared/AppLink',
@@ -11,14 +11,13 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    args:{
+    args: {
         children: 'Text',
         to: '#',
-    }
+    },
 } as ComponentMeta<typeof AppLink>;
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
-
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -35,19 +34,17 @@ Red.args = {
     theme: AppLinkTheme.RED,
 };
 
-
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     theme: AppLinkTheme.PRIMARY,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const InvertedDark  = Template.bind({});
+export const InvertedDark = Template.bind({});
 InvertedDark.args = {
     theme: AppLinkTheme.INVERTED,
 };
 InvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
-
 
 export const RedDark = Template.bind({});
 RedDark.args = {
