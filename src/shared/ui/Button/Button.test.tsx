@@ -27,7 +27,7 @@ describe('Button', () => {
     });
 
     test('Test isSquare', () => {
-        render(<Button>{buttonText}</Button>);
+        render(<Button isSquare>{buttonText}</Button>);
         expect(screen.getByText(buttonText)).toHaveClass('isSquare');
     });
     test('Test size m', () => {
