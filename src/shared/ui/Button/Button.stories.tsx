@@ -72,16 +72,16 @@ Square.args = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
 };
 
-export const IsSquareSizeL = Template.bind({});
-IsSquareSizeL.args = {
+export const SquareSizeL = Template.bind({});
+SquareSizeL.args = {
     children: '>',
     isSquare: true,
     theme: ButtonTheme.BACKGROUND_INVERTED,
     size: ButtonSize.L,
 };
 
-export const IsSquareSizeXL = Template.bind({});
-IsSquareSizeXL.args = {
+export const SquareSizeXL = Template.bind({});
+SquareSizeXL.args = {
     children: '>',
     isSquare: true,
     theme: ButtonTheme.BACKGROUND_INVERTED,
