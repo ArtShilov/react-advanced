@@ -27,7 +27,7 @@ const Button: FC<ButtonProps> = (props) => {
         className,
         theme = ButtonTheme.CLEAR,
         size = ButtonSize.M,
-        isSquare,
+        isSquare = false,
         children,
         ...otherProps
     } = props;
