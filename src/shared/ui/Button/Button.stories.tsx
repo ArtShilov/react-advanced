@@ -65,11 +65,11 @@ BackgroundInvertedTheme.args = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
 };
 
-export const IsSquare = Template.bind({});
-IsSquare.args = {
+export const Square = Template.bind({});
+Square.args = {
     children: '>',
     isSquare: true,
-    theme: ButtonTheme.BACKGROUND,
+    theme: ButtonTheme.BACKGROUND_INVERTED,
 };
 
 export const IsSquareSizeL = Template.bind({});
