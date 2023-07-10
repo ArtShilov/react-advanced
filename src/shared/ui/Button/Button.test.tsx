@@ -11,11 +11,11 @@ describe('Button', () => {
 
     test('Test clear theme', () => {
         render(<Button theme={ButtonTheme.CLEAR}>{buttonText}</Button>);
-        expect(screen.getByText(buttonText)).toHaveClass('outline');
+        expect(screen.getByText(buttonText)).toHaveClass('clear');
     });
     test('Test outline theme', () => {
         render(<Button theme={ButtonTheme.OUTLINE}>{buttonText}</Button>);
-        expect(screen.getByText(buttonText)).toHaveClass('clear');
+        expect(screen.getByText(buttonText)).toHaveClass('outline');
     });
     test('Test background theme', () => {
         render(<Button theme={ButtonTheme.BACKGROUND}>{buttonText}</Button>);
