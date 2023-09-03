@@ -30,7 +30,7 @@ const Navbar: FC<NavbarProps> = (props) => {
                 </Button>
             </div>
             <Modal isOpen={isOpen} onClose={handleCloseModal}>
-                test
+                {t('test')}
             </Modal>
         </>
     );
