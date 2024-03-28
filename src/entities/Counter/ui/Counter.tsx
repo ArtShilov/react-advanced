@@ -16,7 +16,6 @@ const Counter = () => {
     return (
         <>
             <h1 data-testid="value-title">
-                value =
                 {counterValue}
             </h1>
             <Button onClick={handleIncrement} data-testid="button-increment">{t('increment')}</Button>

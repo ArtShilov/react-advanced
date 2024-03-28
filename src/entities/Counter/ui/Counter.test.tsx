@@ -20,7 +20,7 @@ describe('Counter', () => {
         const title = screen.getByTestId('value-title');
 
         expect(title).toBeInTheDocument();
-        expect(title).toHaveTextContent('value = 10');
+        expect(title).toHaveTextContent('10');
 
         expect(buttonIncrement).toBeInTheDocument();
         expect(buttonDecrement).toBeInTheDocument();
@@ -35,7 +35,7 @@ describe('Counter', () => {
 
         userEvent.click(buttonIncrement);
 
-        expect(title).toHaveTextContent('value = 11');
+        expect(title).toHaveTextContent('11');
     });
 
     test('Test button decrement', () => {
@@ -47,6 +47,6 @@ describe('Counter', () => {
         const title = screen.getByTestId('value-title');
 
         userEvent.click(buttonDecrement);
-        expect(title).toHaveTextContent('value = 9');
+        expect(title).toHaveTextContent('9');
     });
 });

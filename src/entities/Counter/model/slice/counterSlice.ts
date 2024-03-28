@@ -9,11 +9,11 @@ export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        increment: (state) => {
+        increment: (state: CounterSchema) => {
             const { value = initialState.value } = state;
             state.value = value ? value + 1 : 1;
         },
-        decrement: (state) => {
+        decrement: (state: CounterSchema) => {
             const { value = initialState.value } = state;
             state.value = value ? value - 1 : -1;
         },
