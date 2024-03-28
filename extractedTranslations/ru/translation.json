@@ -1,5 +1,6 @@
 {
-  "d": "d",
+  "decrement": "decrement",
+  "increment": "increment",
   "test": "test",
   "throw error": "throw error",
   "toggle": "toggle",
