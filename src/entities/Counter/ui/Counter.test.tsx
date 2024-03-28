@@ -1,27 +1,26 @@
-import {  screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
-import Counter from './Counter';
 import { userEvent } from '@storybook/testing-library';
-
+import Counter from './Counter';
 
 describe('Counter', () => {
     const initialState = {
         counter: {
-            value: 10
-        }
-    }
+            value: 10,
+        },
+    };
 
     test('Test render', () => {
         componentRender(<Counter />, {
-            initialState
+            initialState,
         });
-        const buttonIncrement =  screen.getByTestId('button-increment')
-        const buttonDecrement =  screen.getByTestId('button-decrement')
-        const title = screen.getByTestId('value-title')
+        const buttonIncrement = screen.getByTestId('button-increment');
+        const buttonDecrement = screen.getByTestId('button-decrement');
+        const title = screen.getByTestId('value-title');
 
         expect(title).toBeInTheDocument();
-        expect(title).toHaveTextContent(`value = 10`);
+        expect(title).toHaveTextContent('value = 10');
 
         expect(buttonIncrement).toBeInTheDocument();
         expect(buttonDecrement).toBeInTheDocument();
@@ -29,30 +28,25 @@ describe('Counter', () => {
 
     test('Test button increment', () => {
         componentRender(<Counter />, {
-            initialState
+            initialState,
         });
-        const buttonIncrement =  screen.getByTestId('button-increment')
-        const title = screen.getByTestId('value-title')
+        const buttonIncrement = screen.getByTestId('button-increment');
+        const title = screen.getByTestId('value-title');
 
-        userEvent.click(buttonIncrement)
+        userEvent.click(buttonIncrement);
 
-        expect(title).toHaveTextContent(`value = 11`);
-
+        expect(title).toHaveTextContent('value = 11');
     });
 
     test('Test button decrement', () => {
         componentRender(<Counter />, {
-            initialState
+            initialState,
         });
-        
-        const buttonDecrement =  screen.getByTestId('button-decrement')
-        const title = screen.getByTestId('value-title')
 
-        userEvent.click(buttonDecrement)
-        expect(title).toHaveTextContent(`value = 9`);
+        const buttonDecrement = screen.getByTestId('button-decrement');
+        const title = screen.getByTestId('value-title');
 
-
+        userEvent.click(buttonDecrement);
+        expect(title).toHaveTextContent('value = 9');
     });
-
-
 });
