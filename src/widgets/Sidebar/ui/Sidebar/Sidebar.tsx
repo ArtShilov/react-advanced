@@ -33,7 +33,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
                 onClick={handleToggle}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 size={ButtonSize.L}
-                isSquare
+                square
             >
                 {isCollapsed ? '>' : '<'}
             </Button>
